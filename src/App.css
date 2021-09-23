@@ -1,0 +1,60 @@
+:root {
+  --blue-color: #1e90ff;
+  --gray-color: #666F64;
+}
+
+* {
+  font-weight: 600;
+  font-size: 16px;
+  /* color: white */
+}
+
+.font-size-24 {
+  font-size: 24px;
+}
+.margin {
+  margin: 20px;
+}
+
+.padding-top-5 {
+  padding: 5px;
+}
+.padding-10 {
+  padding: 10px;
+}
+
+.padding-20 {
+  padding: 20px;
+}
+
+.border-radius-10 {
+  border-radius: 10px;
+}
+
+.border-radius-30 {
+  border-radius: 30px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid black;
+}
+.color-gray {
+  color: var(--gray-color)
+}
+
+.center {
+  text-align: center;
+}
+
+.background-color-blue {
+    background-color: var(--blue-color);
+}
+
+.map-shadow {
+  box-shadow: 2px 2px 2px 2px #ced6e0 ;
+}
+
+.header {
+  height: 50px;
+  padding: 10px;
+}
