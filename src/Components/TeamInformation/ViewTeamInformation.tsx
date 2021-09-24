@@ -3,7 +3,7 @@ import { Button, Table, Tabs } from 'antd';
 import { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 import { getTeamById } from '../../Api/football-API';
-import GobackButton from '../GobackButton';
+import GobackButton from '../CustomComponents/GobackButton';
 
 const { TabPane } = Tabs;
 
@@ -37,7 +37,7 @@ const ViewTeamInformation = () => {
             sorter: (a: any, b: any) => a.number - b.number,
         },
         {
-            title: 'position',
+            title: 'Position',
             dataIndex: 'position',
             key: 'position',
             sorter: (a: any, b: any) => a.position - b.position,
@@ -74,7 +74,7 @@ const ViewTeamInformation = () => {
             sorter: (a: any, b: any) => a.assists - b.assists,
         },
         {
-            title: 'injured',
+            title: 'Injured',
             dataIndex: 'injured',
             key: 'injured',
             sorter: (a: any, b: any) => a.injured - b.injured,
@@ -132,7 +132,7 @@ const ViewTeamInformation = () => {
             {
                 teamData && (
                     <>
-                        <div className="map-shadow margin border-radius-10">
+                        <div className="map-shadow margin border-radius-10 ">
                             <div className="padding-20">
                                 Team Information :
                                 <Tabs defaultActiveKey="1" >
@@ -166,8 +166,9 @@ const ViewTeamInformation = () => {
                                 </Tabs>
                             </div>
                         </div>
-                        <div className="map-shadow margin border-radius-10">
-                            <div className="padding-20">
+                        <div className="map-shadow margin border-radius-10 background-color-blue">
+                            <div style={{ color: "white" }}
+                                className="padding-10 font-size-20">
                                 Team Players :
                                 <Table
                                     className="center"

@@ -2,7 +2,7 @@ import { Table, Tabs } from 'antd';
 import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router'
 import { getPlayerById } from '../../Api/football-API';
-import GobackButton from '../GobackButton';
+import GobackButton from '../CustomComponents/GobackButton';
 
 const { TabPane } = Tabs;
 

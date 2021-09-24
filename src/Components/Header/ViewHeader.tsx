@@ -4,8 +4,8 @@ import React from 'react'
 
 const ViewHeader = () => {
     return (
-        <Row className="header background-color-blue map-shadow">
-            <Col xs={{ offset: 2, span: 22 }}>
+        <Row className="header background-color-blue map-shadow" style={{ color: "white" }}>
+            <Col xs={{ offset: 2, span: 22 }} className="font-size-20">
                 {/* <img
                     height={36}
                     width={36}

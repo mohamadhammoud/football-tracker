@@ -6,7 +6,10 @@ const GobackButton = () => {
     const history = useHistory();
     return (
         <div className="center margin" style={{ paddingBottom: 10 }}>
-            <Button onClick={() => history.goBack()} type="primary" style={{ borderRadius: 30, width: 200 }}> Go Back</Button>
+            <Button onClick={() => history.goBack()} type="primary" style={{
+                borderRadius: 30, width: 200,
+                //  backgroundColor: "rgba(75, 192, 192, 0.9)"
+            }}> Go Back</Button>
         </div>
     )
 }

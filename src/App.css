@@ -1,6 +1,10 @@
 :root {
-  --blue-color: #1e90ff;
+  --blue-color: #364d79;
+   /* #3742fa; */
+   /* #1e90ff; */
   --gray-color: #666F64;
+  --orange-color: #ffa54b;
+  /* #ced6e0 */
 }
 
 * {
@@ -9,6 +13,12 @@
   /* color: white */
 }
 
+.font-size-14 {
+  font-size: 14px;
+}
+.font-size-20 {
+  font-size: 20px;
+}
 .font-size-24 {
   font-size: 24px;
 }
@@ -38,6 +48,7 @@
 .border-bottom {
   border-bottom: 1px solid black;
 }
+
 .color-gray {
   color: var(--gray-color)
 }
@@ -50,11 +61,45 @@
     background-color: var(--blue-color);
 }
 
+.background-color-orange {
+    background-color: var(--orange-color);
+}
+
+.background-color-gray {
+    background-color: #f1f2f6;
+}
+
+.color-orange {
+    color: var(--orange-color);
+}
+
 .map-shadow {
   box-shadow: 2px 2px 2px 2px #ced6e0 ;
+}
+
+.carousel-shadow {
+  box-shadow: 1px 1px 1px var(--blue-color);
 }
 
 .header {
   height: 50px;
   padding: 10px;
 }
+
+
+.FootballHistory-h1  {
+  font-size: 24px; 
+  font-weight: 700;
+   color: #050505;
+    line-height: 1.2
+  }
+
+.FootballHistory-h1:hover  {
+  color: #ffa54b;
+  }
+
+.FootballHistory-p  {
+  font-size: 15px;
+   font-weight: 500;
+    line-height: 1.875
+  }

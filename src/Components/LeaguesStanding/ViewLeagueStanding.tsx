@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router'
 import { getStandingById } from '../../Api/football-API';
 import { CaretDownFilled, CaretUpFilled, FolderOpenFilled, FolderOpenTwoTone, MinusCircleFilled } from "@ant-design/icons"
-import GobackButton from '../GobackButton';
+import GobackButton from '../CustomComponents/GobackButton';
 
 const ViewLeagueStanding = () => {
     const { id } = useParams() as any;
@@ -24,17 +24,25 @@ const ViewLeagueStanding = () => {
 
     const columns = [
         {
+            title: 'Rank',
+            dataIndex: 'position',
+            key: 'position',
+            sorter: (a: any, b: any) => a.position - b.position,
+            // render: (value: string, record: any) => <span> {record.position} {value} </span>
+        },
+        {
             title: 'Team Name',
             dataIndex: 'team_name',
             key: 'team_name',
             width: 200,
-            sorter: (a: any, b: any) => a.team_name - b.team_name,
-            render: (value: string, record: any) => <span> {record.position} {value} </span>
+            // sorter: (a: any, b: any) => a.team_name - b.team_name,
+            render: (value: string, record: any) => <span className="font-size-20"> {value} </span>
         },
         {
             title: 'Match Played',
             dataIndex: 'overall_gp',
             key: 'overall_gp',
+            width: 200,
             sorter: (a: any, b: any) => a.overall_gp - b.overall_gp,
         },
         {
@@ -62,12 +70,12 @@ const ViewLeagueStanding = () => {
             title: 'Status',
             dataIndex: 'status',
             key: 'status',
-            sorter: (a: any, b: any) => a.status - b.status,
+            width: 150,
             render: (value: string) => (
                 <span>
-                    {value === "up" ? <CaretUpFilled style={{ color: "green" }} translate={undefined} /> : ""}
-                    {value === "same" ? <MinusCircleFilled style={{ color: "gray" }} translate={undefined} /> : ""}
-                    {value === "down" ? <CaretDownFilled style={{ color: "red" }} translate={undefined} /> : ""}
+                    {value === "up" ? <span style={{ color: "green" }}> &nbsp; <CaretUpFilled translate={undefined} /> &nbsp; Up</span> : ""}
+                    {value === "same" ? <span style={{ color: "gray" }}> &nbsp; <MinusCircleFilled translate={undefined} /> &nbsp; Same </span> : ""}
+                    {value === "down" ? <span style={{ color: "red" }}> &nbsp; <CaretDownFilled translate={undefined} /> &nbsp; Down</span> : ""}
                 </span>
             )
         },
@@ -81,12 +89,12 @@ const ViewLeagueStanding = () => {
             title: 'Round',
             dataIndex: 'round',
             key: 'round',
-            sorter: (a: any, b: any) => a.round - b.round,
         },
         {
             title: 'Team Information',
             dataIndex: 'x',
             key: 'x',
+            width: 200,
             render: (_: string, record: any) => (<Button
                 type="primary"
                 onClick={() => history.push(`/teaminfo/${record.team_id}`)}
@@ -99,12 +107,14 @@ const ViewLeagueStanding = () => {
 
     return (
         <>
-            <div className="map-shadow margin border-radius-10">
+            <div className="map-shadow margin border-radius-10  background-color-blue">
                 {
                     data.length > 0 &&
                     (
                         <div
-                            className="padding-10">
+                            style={{ color: "white" }}
+                            className="padding-10 font-size-20"
+                        >
                             <span> {data[0].country ? data[0].country : ""} </span>
                             &nbsp;
                             <span> Season:  {data[0].season ? data[0].season : ""}  </span>
@@ -112,6 +122,7 @@ const ViewLeagueStanding = () => {
                         </div>
                     )
                 }
+
                 <Table
                     className="center padding-10"
                     bordered={true}
