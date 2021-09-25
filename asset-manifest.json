@@ -1,23 +1,32 @@
 {
   "files": {
-    "main.css": "/football-tracker/static/css/main.6ebdedcd.chunk.css",
-    "main.js": "/football-tracker/static/js/main.d2eaef73.chunk.js",
-    "main.js.map": "/football-tracker/static/js/main.d2eaef73.chunk.js.map",
+    "main.css": "/football-tracker/static/css/main.3bf9fc52.chunk.css",
+    "main.js": "/football-tracker/static/js/main.669e05e0.chunk.js",
+    "main.js.map": "/football-tracker/static/js/main.669e05e0.chunk.js.map",
     "runtime-main.js": "/football-tracker/static/js/runtime-main.40508efc.js",
     "runtime-main.js.map": "/football-tracker/static/js/runtime-main.40508efc.js.map",
     "static/css/2.4431df82.chunk.css": "/football-tracker/static/css/2.4431df82.chunk.css",
-    "static/js/2.9d5efbe5.chunk.js": "/football-tracker/static/js/2.9d5efbe5.chunk.js",
-    "static/js/2.9d5efbe5.chunk.js.map": "/football-tracker/static/js/2.9d5efbe5.chunk.js.map",
+    "static/js/2.94ebb80f.chunk.js": "/football-tracker/static/js/2.94ebb80f.chunk.js",
+    "static/js/2.94ebb80f.chunk.js.map": "/football-tracker/static/js/2.94ebb80f.chunk.js.map",
     "index.html": "/football-tracker/index.html",
     "static/css/2.4431df82.chunk.css.map": "/football-tracker/static/css/2.4431df82.chunk.css.map",
-    "static/css/main.6ebdedcd.chunk.css.map": "/football-tracker/static/css/main.6ebdedcd.chunk.css.map",
-    "static/js/2.9d5efbe5.chunk.js.LICENSE.txt": "/football-tracker/static/js/2.9d5efbe5.chunk.js.LICENSE.txt"
+    "static/css/main.3bf9fc52.chunk.css.map": "/football-tracker/static/css/main.3bf9fc52.chunk.css.map",
+    "static/js/2.94ebb80f.chunk.js.LICENSE.txt": "/football-tracker/static/js/2.94ebb80f.chunk.js.LICENSE.txt",
+    "static/media/g1.3ef72610.jpg": "/football-tracker/static/media/g1.3ef72610.jpg",
+    "static/media/g10.36a7f119.jpg": "/football-tracker/static/media/g10.36a7f119.jpg",
+    "static/media/g2.40d59d6b.jpg": "/football-tracker/static/media/g2.40d59d6b.jpg",
+    "static/media/g4.cd25626f.jpg": "/football-tracker/static/media/g4.cd25626f.jpg",
+    "static/media/g6.bd1c65c3.jpg": "/football-tracker/static/media/g6.bd1c65c3.jpg",
+    "static/media/g7.4a90efc1.jpg": "/football-tracker/static/media/g7.4a90efc1.jpg",
+    "static/media/g8.f097d92f.jpg": "/football-tracker/static/media/g8.f097d92f.jpg",
+    "static/media/g9.db23353f.jpg": "/football-tracker/static/media/g9.db23353f.jpg",
+    "static/media/App.css": "/football-tracker/static/media/ticketbooking.9840a5f6.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.40508efc.js",
     "static/css/2.4431df82.chunk.css",
-    "static/js/2.9d5efbe5.chunk.js",
-    "static/css/main.6ebdedcd.chunk.css",
-    "static/js/main.d2eaef73.chunk.js"
+    "static/js/2.94ebb80f.chunk.js",
+    "static/css/main.3bf9fc52.chunk.css",
+    "static/js/main.669e05e0.chunk.js"
   ]
 }
