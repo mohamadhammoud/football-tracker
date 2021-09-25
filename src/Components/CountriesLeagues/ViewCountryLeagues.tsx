@@ -2,6 +2,7 @@ import { Button, Carousel, Col, Divider, Input, Row, Table } from 'antd'
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router';
 import { getAllCompetitions } from '../../Api/football-API';
+import CountriesLeagueCarousel from '../CustomComponents/CountriesLeagueCarousel';
 import CustomCarousel from '../CustomComponents/CustomCarousel';
 import TextDivider from '../CustomComponents/TextDivider';
 import FootballHistory from './FootballHistory';
@@ -42,7 +43,7 @@ const ViewCountryLeagues = () => {
                 // type=""
                 className="background-color-orange"
                 onClick={() => history.push(`/standings/${record.id}`)}
-                style={{ borderRadius: 30, width: 250, backgroundColor: " #364d79", color: "white" }}
+                style={{ borderRadius: 30, width: 250, backgroundColor: "#364d79", color: "white" }}
             >
                 {value}
             </Button>)
@@ -51,6 +52,7 @@ const ViewCountryLeagues = () => {
 
     return (
         <Row justify="center">
+
             <Col xs={{ span: 23 }} className="padding-10">
                 <CustomCarousel />
             </Col>
@@ -82,8 +84,15 @@ const ViewCountryLeagues = () => {
                     />
                 </div>
             </Col>
-            <Col className="map-shadow margin border-radius-10" style={{ backgroundColor: "white" }} md={{ span: 12 }} xs={{ span: 22 }}>
-                <FootballHistory />
+            <Col style={{ backgroundColor: "white" }} md={{ span: 12 }} xs={{ span: 22 }}>
+                <Row className="margin">
+                    <Col span={24} className="map-shadow padding-10 border-radius-10">
+                        <FootballHistory />
+                    </Col >
+                    <Col span={24} className="map-shadow padding-10 margin-top-20 border-radius-10">
+                        <CountriesLeagueCarousel />
+                    </Col>
+                </Row>
             </Col>
         </Row>
     )

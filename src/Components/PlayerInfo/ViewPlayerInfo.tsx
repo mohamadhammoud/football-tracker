@@ -1,4 +1,4 @@
-import { Table, Tabs } from 'antd';
+import { Col, Row, Table, Tabs } from 'antd';
 import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router'
 import { getPlayerById } from '../../Api/football-API';
@@ -26,39 +26,33 @@ const ViewPlayerInfo = () => {
             dataIndex: 'name',
             key: 'name',
             width: 200,
-            sorter: (a: any, b: any) => a.name - b.name,
         },
         {
             title: 'League',
             dataIndex: 'league',
             key: 'league',
             width: 150,
-            sorter: (a: any, b: any) => a.league - b.league,
         },
         {
             title: 'Season',
             dataIndex: 'season',
             key: 'season',
-            sorter: (a: any, b: any) => a.season - b.season,
         },
         {
             title: 'Appearances',
             dataIndex: 'appearances',
             key: 'appearances',
-            sorter: (a: any, b: any) => a.appearances - b.appearances,
         },
         {
             title: 'Goals',
             dataIndex: 'goals',
             key: 'goals',
-            sorter: (a: any, b: any) => a.goals - b.goals,
         },
         {
             title: 'Yellow Cards',
             dataIndex: 'yellowcards',
             key: 'yellowcards',
             width: 150,
-            sorter: (a: any, b: any) => a.yellowcards - b.yellowcards,
             render: (value: string) => (
                 <span style={{ color: "#ffa502" }}>
                     {value}
@@ -70,7 +64,6 @@ const ViewPlayerInfo = () => {
             dataIndex: 'redcards',
             key: 'redcards',
             width: 150,
-            sorter: (a: any, b: any) => a.redcards - b.redcards,
             render: (value: string) => (
                 <span style={{ color: "red" }}>
                     {value}
@@ -86,28 +79,24 @@ const ViewPlayerInfo = () => {
             dataIndex: 'from',
             key: 'from',
             width: 200,
-            sorter: (a: any, b: any) => a.from - b.from,
         },
         {
             title: 'To',
             dataIndex: 'to',
             key: 'to',
             width: 150,
-            sorter: (a: any, b: any) => a.to - b.to,
         },
         {
             title: 'Date',
             dataIndex: 'date',
             key: 'date',
             width: 150,
-            sorter: (a: any, b: any) => a.date - b.date,
         },
         {
             title: 'Type',
             dataIndex: 'type',
             key: 'type',
             width: 150,
-            sorter: (a: any, b: any) => a.type - b.type,
         },
     ] as any;
 
@@ -121,7 +110,13 @@ const ViewPlayerInfo = () => {
             {
                 playerInfo && (
                     <>
-
+                        <div className="player map-shadow margin border-radius-10">
+                            <Row justify="center" className="">
+                                <Col>
+                                    <span className="font-size-24" style={{ color: "white" }}> {playerInfo.firstname}'s Life and Career. </span>
+                                </Col>
+                            </Row>
+                        </div>
                         <div className="map-shadow margin border-radius-10">
                             <div className="padding-20">
                                 <Tabs defaultActiveKey="1" >
@@ -159,13 +154,13 @@ const ViewPlayerInfo = () => {
 
                             </div>
                         </div>
-                        <div className="map-shadow margin border-radius-10">
+                        <div className="map-shadow margin border-radius-10 ">
                             <div className="padding-20">
-                                Player Statistics
+                                <span className="font-size-24"> {playerInfo.firstname} </span> Statistics :
                                 <Tabs defaultActiveKey="1" >
                                     <TabPane tab="History with clubs" key="1">
                                         <Table
-                                            className="center padding-10"
+                                            className="center padding-10 background-color-blue"
                                             bordered={true}
                                             pagination={{ pageSize: 6 }}
                                             dataSource={playerInfo.player_statistics.club ? playerInfo.player_statistics.club : []}
@@ -176,7 +171,7 @@ const ViewPlayerInfo = () => {
                                     </TabPane>
                                     <TabPane tab="Cups" key="2">
                                         <Table
-                                            className="center padding-10"
+                                            className="center padding-10 background-color-blue"
                                             bordered={true}
                                             pagination={{ pageSize: 6 }}
                                             dataSource={playerInfo.player_statistics.cups ? playerInfo.player_statistics.cups : []}
@@ -187,7 +182,7 @@ const ViewPlayerInfo = () => {
                                     </TabPane>
                                     <TabPane tab="National Team" key="3">
                                         <Table
-                                            className="center padding-10"
+                                            className="center padding-10 background-color-blue"
                                             bordered={true}
                                             pagination={{ pageSize: 6 }}
                                             dataSource={playerInfo.player_statistics.national ? playerInfo.player_statistics.national : []}
@@ -198,7 +193,7 @@ const ViewPlayerInfo = () => {
                                     </TabPane>
                                     <TabPane tab="Transfers" key="4">
                                         <Table
-                                            className="center padding-10"
+                                            className="center padding-10 background-color-blue"
                                             bordered={true}
                                             pagination={{ pageSize: 6 }}
                                             dataSource={playerInfo.transfers ? playerInfo.transfers : []}

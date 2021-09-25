@@ -1,4 +1,4 @@
-import { Button, Table } from 'antd';
+import { Button, Col, Input, Row, Table } from 'antd';
 import React, { useEffect, useState } from 'react'
 import { useHistory, useParams } from 'react-router'
 import { getStandingById } from '../../Api/football-API';
@@ -11,17 +11,26 @@ const ViewLeagueStanding = () => {
     const history = useHistory();
 
     const [data, setData] = useState<any>([]);
+    const [searchedTeam, setSearchedTeam] = useState<any>([]);
+
+    const searchForTeam = (value: string) => {
+        const filteredResult = data.filter((team: any) => team.team_name.toLowerCase().includes(value.toLowerCase()))
+        setSearchedTeam(filteredResult);
+
+    }
+
     useEffect(() => {
         const callStandingsById = async () => {
             const [error, data] = await getStandingById(id);
             if (!error) {
                 setData(data);
+                console.log(data);
             }
         }
         callStandingsById();
     }, []);
 
-
+    // "Promotion - Champions League (Group Stage)"
     const columns = [
         {
             title: 'Rank',
@@ -98,7 +107,7 @@ const ViewLeagueStanding = () => {
             render: (_: string, record: any) => (<Button
                 type="primary"
                 onClick={() => history.push(`/teaminfo/${record.team_id}`)}
-                style={{ borderRadius: 30, width: 100 }}
+                style={{ borderRadius: 30, width: 100, backgroundColor: "#364d79" }}
             >
                 <FolderOpenFilled />
             </Button>)
@@ -108,6 +117,20 @@ const ViewLeagueStanding = () => {
     return (
         <>
             <div className="map-shadow margin border-radius-10  background-color-blue">
+                {data.length > 0 && <section className="latestResult">
+                    <Row justify="center" >
+                        <Col span={24} className="latestResult-column">
+                            LATEST <span className="latestResult-column" style={{ color: "#b81e20" }}> RESULTS </span>
+                        </Col>
+                        <Col span={24} style={{ color: "white" }} className="latestResult-column">
+                            <span> {data[0].country ? data[0].country : ""} </span>
+                            &nbsp;
+                            <span> Season:  {data[0].season ? data[0].season : ""}  </span>
+                        </Col>
+                    </Row>
+                </section>}
+            </div>
+            <div className="map-shadow margin border-radius-10  background-color-blue">
                 {
                     data.length > 0 &&
                     (
@@ -115,10 +138,13 @@ const ViewLeagueStanding = () => {
                             style={{ color: "white" }}
                             className="padding-10 font-size-20"
                         >
-                            <span> {data[0].country ? data[0].country : ""} </span>
-                            &nbsp;
-                            <span> Season:  {data[0].season ? data[0].season : ""}  </span>
-
+                            <div>
+                                Search: &nbsp;
+                                <Input
+                                    style={{ width: 250, borderRadius: 30 }}
+                                    onChange={(e: any) => searchForTeam(e.target.value)}
+                                />
+                            </div>
                         </div>
                     )
                 }
@@ -127,7 +153,7 @@ const ViewLeagueStanding = () => {
                     className="center padding-10"
                     bordered={true}
                     pagination={{ pageSize: 10 }}
-                    dataSource={data}
+                    dataSource={searchedTeam.length > 0 ? searchedTeam : data}
                     columns={columns}
                     scroll={{ x: 500 }}
                     rowKey={(row: any) => row.name}

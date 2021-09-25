@@ -26,6 +26,10 @@
   margin: 20px;
 }
 
+.margin-top-20 {
+  margin-top: 20px;
+}
+
 .padding-top-5 {
   padding: 5px;
 }
@@ -94,12 +98,45 @@
     line-height: 1.2
   }
 
-.FootballHistory-h1:hover  {
+/* .FootballHistory-h1:hover  {
   color: #ffa54b;
-  }
+  } */
 
 .FootballHistory-p  {
   font-size: 15px;
    font-weight: 500;
     line-height: 1.875
   }
+
+  /* Template */
+  .bookticket {
+    background-image: url(./assets/ViewTeamInfoAssets/ticketbooking.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 25px 0;
+}
+
+.latestResult {
+  padding: 100px 0;
+  background: url(./assets/ViewLeagueStandings/latestnews.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.latestResult-column {
+  color: white;
+  font-size: 40px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.player {
+  padding: 40px 0;
+  background-image: url(./assets//ViewPlayerInfo/infoBg.jpg);
+  background-size: cover;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
